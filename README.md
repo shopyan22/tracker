@@ -16,7 +16,7 @@ This web app allows users to retrieve information about a token on the Solana bl
 
 ## Demo
 
-You can see a live demo of the web app [[here](https://shopyan22.github.io/tracker/)](#)
+You can see a live demo of the web app [[here](https://shopyan22.github.io/tracker/)]
 
 ## Technologies Used
 
