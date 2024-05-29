@@ -70,8 +70,8 @@
 <body>
   <div class="container">
     <div class="input-container">
-      <input type="text" id="tokenAddress" name="tokenAddress" placeholder="Masukkan alamat token">
-      <button onclick="getInfo()">Dapatkan Info</button>
+      <input type="text" id="tokenAddress" name="tokenAddress" placeholder="Enter token address">
+      <button onclick="getInfo()">Get Info</button>
     </div>
 
     <div id="info"></div>
@@ -83,7 +83,7 @@
       const infoDiv = document.getElementById('info');
 
       if (!tokenAddress) {
-        infoDiv.textContent = 'Alamat token tidak boleh kosong';
+        infoDiv.textContent = 'Token address cannot be empty';
         return;
       }
 
@@ -95,8 +95,8 @@
         const renounce = data.security.renounce;
         const lpBurn = data.lpBurn;
 
-        let mintableInfo = mintable ? '<span class="danger">(Bahaya) True</span>' : '<span class="safe">(Aman) False</span>';
-        let renounceInfo = renounce ? '<span class="safe">(Aman) True</span>' : '<span class="danger">(Bahaya) False</span>';
+        let mintableInfo = mintable ? '<span class="danger">(Danger) True</span>' : '<span class="safe">(Safe) False</span>';
+        let renounceInfo = renounce ? '<span class="safe">(Safe) True</span>' : '<span class="danger">(Danger) False</span>';
 
         infoDiv.innerHTML = `
           <p>Mintable: ${mintableInfo}</p>
@@ -105,7 +105,7 @@
         `;
       } catch (error) {
         console.error('Error fetching data:', error);
-        infoDiv.textContent = 'Gagal mengambil data. Periksa kembali alamat token.';
+        infoDiv.textContent = 'Failed to fetch data. Please check the token address.';
       }
     }
   </script>
